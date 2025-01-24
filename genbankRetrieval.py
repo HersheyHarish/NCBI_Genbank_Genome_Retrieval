@@ -70,3 +70,26 @@ def save_to_csv(data, filename):
         writer.writerows(data)
     
     print(f"Data saved to {filename}.")
+
+
+def main():
+    query = "Coronaviridae[Organism] AND complete genome[Title]"
+    retmax = 10  
+    total_count, record_ids = search_complete_genomes(query, retmax=retmax)
+
+    print(f"For query: {query}, found {total_count} records.")
+    print("Fetching genome details...")
+
+    genome_data = []
+    for idx, record_id in enumerate(record_ids):
+        print(f"Fetching record {idx + 1}/{len(record_ids)}: {record_id}")
+        details = fetch_genome_details(record_id)
+        if details:
+            genome_data.append(details)
+        time.sleep(1)  # Avoid exceeding NCBI rate limits
+
+    save_to_csv(genome_data, "coronaviridae_test_run.csv")
+
+
+if __name__ == "__main__":
+    main()
