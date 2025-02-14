@@ -1,0 +1,12 @@
+# Ignore environment files
+*.env
+
+Datasets/*.csv
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore checkpoint files
+checkpoint.txt
