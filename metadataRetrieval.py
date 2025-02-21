@@ -33,7 +33,7 @@ def load_checkpoint():
     return 0
 
 def search_coronaviridae_genomes():
-    query = '"Coronaviridae [Organism] AND Complete Genome [Title] NOT Severe acute respiratory syndrome-related coronavirus"'
+    query = 'Coronaviridae [Organism] AND Complete Genome [Title] NOT Severe acute respiratory syndrome-related coronavirus'
     handle = Entrez.esearch(db="nucleotide", term=query, retmax=100000000, usehistory="y")  #
     results = Entrez.read(handle)
     handle.close()
