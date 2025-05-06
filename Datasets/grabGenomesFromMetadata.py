@@ -13,7 +13,7 @@ Entrez.email = "hsundar@ucdavis.edu"  # Replace with your email
 Entrez.api_key = NCBI_API_KEY  # Use API key for faster requests
 
 # Load dataset
-csv_file = "testData.csv"  # Replace with your CSV file path
+csv_file = "filtered_output_v1.csv"  # Replace with your CSV file path
 df = pd.read_csv(csv_file)
 
 # Extract unique accession numbers
@@ -42,7 +42,7 @@ for i, acc in enumerate(accession_list):
 df["Genomic Sequence"] = df["accession"].map(sequence_dict)
 
 # Save the updated dataset
-output_file = "BertDnaS_Run2.csv"
+output_file = "Random_BertDNA_RUN_1.csv"
 df.to_csv(output_file, index=False)
 
 print(f"\n Updated CSV saved as {output_file}")
