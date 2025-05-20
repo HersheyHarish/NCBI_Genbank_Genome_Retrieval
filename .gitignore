@@ -6,6 +6,9 @@ Datasets/old_genbank_pull/
 
 Train/
 
+*.npy
+*.pkl
+
 # Ignore Python cache
 __pycache__/
 *.pyc
